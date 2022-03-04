@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1415115909152",
+    "Statement": [
+        {
+            "Sid": "Access-to-specific-PublicIP-only",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::s3-access-test-techdemos",
+                "arn:aws:s3:::s3-access-test-techdemos/*"
+            ],
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "45.xxx.yyy.122"
+                }
+            }
+        }
+    ]
+}
